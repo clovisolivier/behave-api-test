@@ -1,0 +1,30 @@
+Feature: showing off behave
+
+  Scenario: Weather request status
+    Given we call the weather API for London ... passed in 0.147s
+    Then status code should be 401 ... passed in 0.000s
+
+  Scenario: Weather request status
+    Given we call the weather API for Paris ... passed in 0.052s
+    Then status code should be 401 ... passed in 0.000s
+
+  Scenario Outline: Use Blender with 1 -- @1.1 Amphibians
+    Given I put "1" in a calculate ... passed in 0.000s
+    When I switch the calculate on ... passed in 0.000s
+    Then it should transform into "1" ... passed in 0.000s
+
+  Scenario Outline: Use Blender with 2 -- @1.2 Amphibians
+    Given I put "2" in a calculate ... passed in 0.000s
+    When I switch the calculate on ... passed in 0.000s
+    Then it should transform into "4" ... passed in 0.000s
+
+  Scenario Outline: Use Blender with 4 -- @2.1 Consumer Electronics
+    Given I put "4" in a calculate ... passed in 0.000s
+    When I switch the calculate on ... passed in 0.000s
+    Then it should transform into "16" ... passed in 0.000s
+
+  Scenario Outline: Use Blender with 5 -- @2.2 Consumer Electronics
+    Given I put "5" in a calculate ... passed in 0.000s
+    When I switch the calculate on ... passed in 0.000s
+    Then it should transform into "25" ... passed in 0.000s
+
