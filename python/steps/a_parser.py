@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#Need to be
+# Need to be parse first -> named a_parser.py
 
 from behave import *
 import parse

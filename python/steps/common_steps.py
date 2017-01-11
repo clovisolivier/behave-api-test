@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Common steps definition
+
 from behave import *
-import json
 
 
 @given('I clean params in context')
@@ -44,16 +45,11 @@ def step_impl(context, data, param):
 
 @then('status code should be {status_code:Number}')
 def step_impl(context, status_code):
-    print("Status_code expected :",status_code, ",", context.response.status_code,"received.")
-    assert hasattr(context,'response')
-    assert hasattr(context.response,'status_code')
-    assert context.response.status_code == status_code
+    assert hasattr(context,'requester')
+    context.requester.assert_status_code(status_code)
 
 
 @then('error message should be on "{attribute:Str}"')
 def step_impl(context, attribute):
-    assert hasattr(context, 'response')
-    body = json.loads(context.response.text)
-    print("Response body : ",body)
-    assert attribute in body
-    print("expected :", attribute, "not found.")
+    assert hasattr(context, 'requester')
+    context.requester.assert_error_attribute(attribute)

@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import requests
 from behave import given, when, then
 from models.stats import Stats
 
 
 @when('I call the stats WS')
 def step_impl(context):
-    context.requeter = Stats()
-    context.requeter.add_params(context.params)
-    url = context.baseUrl + context.requeter.path
-    print("URL",url)
-    print("Params",context.requeter.param)
-    context.response = requests.get(url, params=context.requeter.param)
-    context.requeter.set_response(context.response)
+    context.requester = Stats()
+    context.requester.add_params(context.params)
+    context.requester.call_get_ws(context.baseUrl)
 
 
 @then('stats result is contains all needed fields')
 def step_impl(context):
-    context.requeter.validate_response_format()
+    context.requester.validate_response_format()
 
 
 @then('stats currency is "{currency}"')
 def step_impl(context, currency):
-    context.requeter.assert_currency(currency)
+    context.requester.assert_currency(currency)
