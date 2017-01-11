@@ -12,27 +12,6 @@ def step_impl(context):
     context.post_params = {}
 
 
-@given('I want to call WS with account_id {account_id}')
-def step_impl(context, account_id):
-    context.params['account_id'] = account_id
-
-
-@given(u'I want data between "{date_from}" and "{date_to}"')
-def step_impl(context, date_from, date_to):
-    context.params['date_from'] = date_from
-    context.params['date_to'] = date_to
-
-
-@given(u'I want data after "{date_from}"')
-def step_impl(context, date_from):
-    context.params['date_from'] = date_from
-
-
-@given(u'I want data before "{date_to}"')
-def step_impl(context, date_to):
-    context.params['date_to'] = date_to
-
-
 @given(u'I want to set "{data}" in param "{param:Str}"')
 def step_impl(context, data, param):
     context.params[param] = data

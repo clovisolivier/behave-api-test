@@ -4,7 +4,7 @@
 # steps definition for currency WS
 
 from behave import given, when, then
-from models.currency import Currency
+from models.example import Currency
 
 
 @when('I call the currency WS')
