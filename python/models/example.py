@@ -7,7 +7,7 @@ from models.requeter import Requester
 class Example(Requester):
 
     def __init__(self):
-        self.path = 'example'
+        self.path = 'weather'
 
     def validate_response_format(self):
         assert hasattr(self.response, 'text')

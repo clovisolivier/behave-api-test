@@ -4,11 +4,11 @@
 # steps definition for currency WS
 
 from behave import given, when, then
-from models.example import Currency
+from models.example import Example
 
 
-@when('I call the currency WS')
+@when('I call the example WS')
 def step_impl(context):
-    context.requester = Currency()
-    context.requester.add_body_request_param(context.post_params)
-    context.requester.call_post_ws(context.baseUrl)
+    context.requester = Example()
+    context.requester.add_params(context.params)
+    context.requester.call_get_ws(context.baseUrl)

@@ -3,7 +3,7 @@
 
 # Need to be parse first -> named a_parser.py
 
-from behave import *
+from behave import register_type
 import parse
 
 
