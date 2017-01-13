@@ -3,20 +3,23 @@
 
 import json
 import requests
+import abc
 
 
 # Tool to managed http requests
-class Requester:
+class Requester(metaclass=abc.ABCMeta):
 
-    def __init__(self):
+    def __init__(self,path):
         # Get params
         self.params = {}
         # Post Params
         self.body_params = {}
         # Http response
-        self.response = ''
+        self.response = None
         # Response Body
         self.response_body = {}
+        # Service Path
+        self.path = path
 
     # Add Get parameters
     def add_params(self, params_list):
